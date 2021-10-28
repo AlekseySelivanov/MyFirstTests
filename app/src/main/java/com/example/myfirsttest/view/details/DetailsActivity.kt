@@ -12,12 +12,11 @@ import java.util.*
 
 class DetailsActivity : AppCompatActivity(), ViewDetailsContract {
 
-    private lateinit var presenter: PresenterDetailsContract
+    private val presenter: PresenterDetailsContract = DetailsPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-        presenter = DetailsPresenter(this)
         setUI()
     }
 
@@ -38,15 +37,6 @@ class DetailsActivity : AppCompatActivity(), ViewDetailsContract {
             String.format(Locale.getDefault(), getString(R.string.results_count), count)
     }
 
-    override fun onStart() {
-        super.onStart()
-        presenter.onAttach(this)
-    }
-
-    override fun onStop() {
-        super.onStop()
-        presenter.onDetach(this)
-    }
     companion object {
 
         const val TOTAL_COUNT_EXTRA = "TOTAL_COUNT_EXTRA"

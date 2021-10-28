@@ -36,6 +36,21 @@ android {
             includeAndroidResources = true
         }
     }
+    flavorDimensions "default"
+    productFlavors {
+        fake {
+            dimension "default"
+            applicationIdSuffix ".fake"
+            versionNameSuffix "-fake"
+            buildConfigField "String", "TYPE", '"FAKE"'
+        }
+        real {
+            dimension "default"
+            applicationIdSuffix ".real"
+            versionNameSuffix "-real"
+            buildConfigField "String", "TYPE", '"REAL"'
+        }
+    }
 }
 
 dependencies {

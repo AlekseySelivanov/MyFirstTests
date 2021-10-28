@@ -4,7 +4,7 @@ import com.example.myfirsttest.view.ViewContract
 import com.example.myfirsttest.view.details.ViewDetailsContract
 
 internal class DetailsPresenter internal constructor(
-    private var viewContract: ViewDetailsContract?,
+    private val viewContract: ViewDetailsContract,
     private var count: Int = 0
 ) : PresenterDetailsContract {
 
@@ -14,23 +14,19 @@ internal class DetailsPresenter internal constructor(
 
     override fun onIncrement() {
         count++
-        viewContract!!.setCount(count)
+        viewContract.setCount(count)
     }
 
     override fun onDecrement() {
         count--
-        viewContract!!.setCount(count)
+        viewContract.setCount(count)
     }
 
-    fun getView() = viewContract
-
     override fun onAttach(view: ViewContract) {
-        if (viewContract == null) {
-            viewContract = view as ViewDetailsContract
-        }
+        TODO("Not yet implemented")
     }
 
     override fun onDetach(view: ViewContract) {
-        viewContract = null
+        TODO("Not yet implemented")
     }
 }
