@@ -6,6 +6,16 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myfirsttest.R
+import com.example.myfirsttest.model.SearchResult
+import com.example.myfirsttest.presenter.RepositoryContract
+import com.example.myfirsttest.presenter.search.PresenterSearchContract
+import com.example.myfirsttest.presenter.search.SearchPresenter
+import com.example.myfirsttest.repository.GitHubApi
+import com.example.myfirsttest.repository.GitHubRepository
+import com.example.myfirsttest.view.details.DetailsActivity
+import com.example.myfirsttest.view.search.SearchResultAdapter
+import com.example.myfirsttest.view.search.ViewSearchContract
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
