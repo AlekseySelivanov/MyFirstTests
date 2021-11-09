@@ -5,7 +5,7 @@ import com.example.myfirsttest.model.SearchResponse
 import com.example.myfirsttest.presenter.RepositoryContract
 import retrofit2.Response
 
-internal class FakeGitHubRepository : RepositoryContract {
+internal abstract class FakeGitHubRepository : RepositoryContract {
 
     override fun searchGithub(
         query: String,

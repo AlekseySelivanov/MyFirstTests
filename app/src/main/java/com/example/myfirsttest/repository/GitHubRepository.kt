@@ -2,6 +2,7 @@ package com.example.myfirsttest.repository
 
 import com.example.myfirsttest.model.SearchResponse
 import com.example.myfirsttest.presenter.RepositoryContract
+import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,5 +30,9 @@ internal class GitHubRepository(private val gitHubApi: GitHubApi) : RepositoryCo
                 callback.handleGitHubError()
             }
         })
+    }
+
+    override fun searchGithub(query: String): Observable<SearchResponse> {
+        TODO("Not yet implemented")
     }
 }
